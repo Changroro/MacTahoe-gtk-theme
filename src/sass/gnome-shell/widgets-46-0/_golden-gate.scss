@@ -1,0 +1,19 @@
+// Golden Gate fork: Dynamic Island style date menu, always black like the hardware island
+$island_bg: black;
+$island_card: #1c1c1e;
+$island_card_hover: #2c2c2e;
+
+.popup-menu-content.datemenu-popover {
+  color: white;
+  background-color: $island_bg;
+  border: 1px solid rgba(white, 0.08);
+  border-radius: 28px !important;
+  box-shadow: 0 8px 24px rgba(black, 0.4);
+
+  .message, .calendar, .events-button, .world-clocks-button, .weather-button, .datemenu-today-button {
+    color: white;
+    background-color: $island_card;
+
+    &:hover, &:focus { background-color: $island_card_hover; }
+  }
+}

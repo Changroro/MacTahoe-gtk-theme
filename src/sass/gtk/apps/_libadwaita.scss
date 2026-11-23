@@ -635,7 +635,7 @@ toolbarview.undershoot-bottom scrolledwindow {
 .sidebar-pane .content-pane {
   background-image: linear-gradient(to bottom, rgba(black, 0.03), transparent 80%, rgba(white, 0.03));
   color: $dark_sidebar_fg;
-  border-radius: $wm_radius - $container_padding;
+  border-radius: 0;
 
   @if $blur == 'true' or $trans == 'true' {
     background-color: transparent;
@@ -659,25 +659,19 @@ toolbarview.undershoot-bottom scrolledwindow {
     }
   }
 
-  &:dir(ltr) {
-    margin: $container_padding 0 $container_padding $container_padding;
-  }
-
-  &:dir(rtl) {
-    margin: $container_padding $container_padding $container_padding 0;
-  }
+  margin: 0;
 
   &:dir(ltr) {
     &, banner > revealer > widget {
-      box-shadow: 2px 3px 12px rgba(black, 0.1), inset 0 0 0 1px $sidebar_highlight_color;
-      border-right: none;
+      box-shadow: none;
+      border-right: 1px solid $header_border;
     }
   }
 
   &:dir(rtl) {
     &, banner > revealer > widget {
-      box-shadow: -2px 3px 12px rgba(black, 0.1), inset 0 0 0 1px $sidebar_highlight_color;
-      border-left: none;
+      box-shadow: none;
+      border-left: 1px solid $header_border;
     }
   }
 
@@ -705,16 +699,16 @@ toolbarview.undershoot-bottom scrolledwindow {
       &:dir(ltr),
       &.end:dir(rtl) {
         &, banner > revealer > widget {
-          box-shadow: 9000px 0 0 9999px $base_color, 2px 3px 12px rgba(black, 0.1), inset 0 0 0 1px $sidebar_highlight_color;
-          border-right: none;
+          box-shadow: 9000px 0 0 9999px $base_color;
+          border-right: 1px solid $header_border;
         }
       }
   
       &:dir(rtl),
       &.end:dir(ltr) {
         &, banner > revealer > widget {
-          box-shadow: -9000px 0 0 9999px $base_color, -2px 3px 12px rgba(black, 0.1), inset 0 0 0 1px $sidebar_highlight_color;
-          border-left: none;
+          box-shadow: -9000px 0 0 9999px $base_color;
+          border-left: 1px solid $header_border;
         }
       }
     }

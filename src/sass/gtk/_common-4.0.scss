@@ -4997,7 +4997,11 @@ placessidebar {
       padding: 0;
     }
 
+    &:selected image.sidebar-icon { color: inherit; }
+
     image.sidebar-icon {
+      color: $selected_bg_color;
+
       &:dir(ltr) { padding-right: 8px; }
       &:dir(rtl) { padding-left: 8px; }
     }
@@ -5423,9 +5427,9 @@ window {
     border-radius: $wm_radius;
     outline: 1px solid $highlight_color;
     outline-offset: -1px;
-    box-shadow: 0 3px 6px RGB(0 0 0 / 15%),
-                0 7px 24px RGB(0 0 0 / 12%),
-                0 12px 32px RGB(0 0 0 / 8%),
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.20),
+                0 7px 24px rgba(0, 0, 0, 0.18),
+                0 12px 32px rgba(0, 0, 0, 0.14),
                 $wm_outline;
     margin: 0;
 
@@ -5433,8 +5437,8 @@ window {
       transition: $shadow_transition;
       // the transparent shadow here is to enforce that the shadow extents don't
       // change when we go to backdrop, to prevent jumping windows
-      box-shadow: 0 3px 6px RGB(0 0 0 / 10%),
-                  0 7px 24px RGB(0 0 0 / 6%),
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.07),
+                  0 7px 24px rgba(0, 0, 0, 0.04),
                   0 12px 32px transparent,
                   $wm_outline;
     }

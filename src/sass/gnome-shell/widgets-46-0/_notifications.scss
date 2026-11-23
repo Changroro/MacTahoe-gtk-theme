@@ -1,23 +1,26 @@
 /* Notifications & Message Tray */
 
 $notification_banner_height: 64px;
-$notification_banner_width: 34em;
+$notification_banner_width: 28em;
 
-// Banner notifications
+// Banner notifications: Dynamic Island style (always black pill)
 .notification-banner {
   min-height: $notification_banner_height;
   width: $notification_banner_width;
-  border-radius: $bt_radius + $base_padding * 2;
+  border-radius: 32px;
   margin: $base_padding * 2;
-  padding: $scaled_padding;
-  border: 1px solid if($variant=='light', rgba(black, 0), rgba(black, 0.75));
+  padding: $scaled_padding $scaled_padding * 2;
+  border: 1px solid rgba(white, 0.08);
   text-shadow: none;
-  box-shadow: 0 3px 5px rgba(black, 0.15);
+  box-shadow: 0 6px 18px rgba(black, 0.35);
 
   &, &:hover, &:active {
-    color: $fg_color;
-    background-color: $popover_bg_color;
+    color: white;
+    background-color: black;
   }
+
+  .message-title, .message-body, .event-time { color: white; }
+  .message-body, .event-time { color: rgba(white, 0.7); }
 }
 
 .notification-buttons-bin {
